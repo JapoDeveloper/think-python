@@ -1,2 +1,2 @@
 # think-python
-A recompilation of solutions for exercises in the book Think Python
+A compilation of solutions of exercises proposed in the book Think Python.
