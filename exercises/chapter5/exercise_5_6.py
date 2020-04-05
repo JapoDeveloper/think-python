@@ -35,3 +35,62 @@ outline of a snowflake.
 See http://en.wikipedia.org/wiki/Koch_snowflake for examples and implement 
 your favorite.
 """
+
+import turtle
+
+
+def koch(t, length):
+    """
+    Draw a Koch curve with the given length
+    t     : Turtle -> object use to draw into the window 
+    length: int    -> the length should have the curve
+    """
+    if length < 3:
+        t.fd(length)
+        return
+
+    length /= 3
+    koch(t, length)
+    t.lt(60)
+    koch(t, length)
+    t.rt(120)
+    koch(t, length)
+    t.lt(60)
+    koch(t, length)
+
+
+def snowflake(t, length):
+    """
+    Draw a snowflake using Koch curve
+    t     : Turtle -> object use to draw into the window 
+    length: int    -> the length should have the figure
+    """
+    koch(t, length)
+    t.rt(120)
+    koch(t, length)
+    t.rt(120)
+    koch(t, length)
+
+
+def draw(f, t, length):
+    """
+    Wrapper function to prepare the workspace before start drawing
+    f     : function -> draw function to be called
+    t     : Turtle   -> object use to draw into the window
+    length: int      -> the length should have the figure
+    """
+    # Prepare the workspace
+    t.pu()
+    t.bk(length/2)
+    t.pd()
+
+    # Init to draw
+    f(t, length)
+
+
+t = turtle.Turtle()
+
+# draw(koch, t, 100)
+draw(snowflake, t, 100)
+
+turtle.mainloop()
