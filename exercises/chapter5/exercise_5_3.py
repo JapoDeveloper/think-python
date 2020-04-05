@@ -23,3 +23,32 @@ form a triangle from sticks with the given lengths.
 converts them to integers, and uses is_triangle to check whether sticks with 
 the given lengths can form a triangle.
 """
+
+
+def is_triangle(a, b, c):
+    """
+    Check if the given length for three sticks can  form a triangle
+    a,b,c : int -> the length of every side
+    """
+    if a < (b + c) and b < (a + c) and c < (a + b):
+        print('Si')
+        return True
+    else:
+        print('No')
+        return False
+
+
+def get_lengths():
+    """
+    Prompt user to type the value of three side of a triangle 
+    """
+    print('Hello, you are in Triangle Checker')
+    print('Type:')
+    a = int(input('Side 1 length = '))
+    b = int(input('Side 2 length = '))
+    c = int(input('Side 3 length = '))
+    return a, b, c
+
+
+a, b, c = get_lengths()  # User values
+is_triangle(a, b, c)
