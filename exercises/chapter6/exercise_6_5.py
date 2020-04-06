@@ -14,3 +14,16 @@ we can use gcd(a,0) = a.
 Write a function called gcd that takes parameters a and b and returns their 
 greatest common divisor.
 """
+
+
+def gcd(a, b):
+    """Calculate the greatest common divisor between integers 'a' and 'b'."""
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+print(gcd(2,3))   # 1
+print(gcd(2,4))   # 2
+print(gcd(9, 30)) # 3
+print(gcd(8,12))  # 4
