@@ -22,3 +22,20 @@ resulting input and evaluates it using eval, and prints the result.
 It should continue until the user enters 'done', and then return the value of 
 the last expression it evaluated.
 """
+
+
+def eval_loop():
+    """Allow user to enter expressions and check its evaluation"""
+    result = None
+    while True:
+        exp = input('>>> ')
+        if exp == 'done':
+            return result
+        try:
+            result = eval(exp)
+            print(result)
+        except Exception as ex:
+            print('Invalid expresion!', ex)
+
+
+print('\nLast result:', eval_loop())
