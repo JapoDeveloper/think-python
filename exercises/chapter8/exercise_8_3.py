@@ -17,3 +17,16 @@ generates a reversed string.
 
 Use this idiom to write a one-line version of is_palindrome from Exercise 6-3.
 """
+
+
+def is_palindrome(word):
+    return word == word[::-1]
+
+
+print('Are palindromes?:')
+print('noon', is_palindrome('noon'))  # Yes
+print('redivider', is_palindrome('redivider'))  # Yes
+print('a', is_palindrome('a'))  # Yes
+print('empty string', is_palindrome(''))  # Yes
+print('night', is_palindrome('night'))  # No
+print('word', is_palindrome('word'))  # No
